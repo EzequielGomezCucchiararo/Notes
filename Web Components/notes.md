@@ -125,3 +125,68 @@ In this cases, each template has to be cloned and added to the page manually. Fo
 ```
 
 ## #2 Custom Elements
+
+Custom elements help the problem of "undescriptive markup". Descriptive markup:
+
+`Generic Markup:`
+```html
+<div>
+    My to do list<br/>
+    1. Take out trash.<br/>
+    2. Walk dog.<br/>
+    3. Clean room.<br/>
+</div>
+```
+
+`Descriptive Markup:`
+```html
+<div>
+    <h1>My to do list</h1>
+    <ol>
+        <li>Take out trash</li>
+        <li>Walk dog</li>
+        <li>Clean room</li>
+    </ol>
+</div>
+```
+
+- Conveys additional information.
+- Improves SEO.
+- Enhances accesibility.
+- Speeds development (by reducing the amount of markup writted).
+- Aids maintenance.
+
+### Core functionality
+
+ Custom Elements provide two new core functionalities. 
+ 
+ 1. First, yo can define your own rich HTML elements. Name must have a dash (-).
+ 2. Second, custom elements can extend the existing HTML elements that you already know using the `is` attribute. For instance, maybe you want to make a search input that extends the native HTML text input and adds additional functionality like auto-complete and a little search icon in the background.
+
+```js
+<input type="text" is="search">
+```
+
+### Registering Custom Elements
+
+Registering and utilizing a custom element is a simple, a three-step process.
+
+#### 1. Create a prototype
+
+```js
+// If you want to extend a <button> element or any other, use the corresponding object: ex.: HTMLButtonElement
+var SlickTabs = Object.create(HTMLElement.prototype);
+// Add properties and functions to prototype here.
+```
+
+#### 2.  Register the new element via registerElement
+
+```js
+document.registerElement('slick-tabs')
+```
+
+#### 3.  Use it! (Add to DOM or place tag on page)
+
+```js
+document.body.appendChild(new SlickTabs());
+```
