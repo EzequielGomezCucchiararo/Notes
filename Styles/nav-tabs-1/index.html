@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nav Tabs V1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+    <ul class="tabs-nav">
+        <li class="tabs-nav__tab active">
+            <a href="#main-panel" data-toggle="tab" aria-expanded="true">Basic Information</a>
+        </li>
+        <li class="tabs-nav__tab">
+            <a href="#companies-panel" data-toggle="tab" aria-expanded="true">Companies Data</a>
+        </li>
+        <li class="tabs-nav__tab">
+            <a href="#preferences-panel" data-toggle="tab" aria-expanded="true">Preferences</a>
+        </li>
+        <li class="tabs-nav__tab">
+            <a href="#documents-panel" data-toggle="tab" aria-expanded="true">Documents/Cards</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="main-panel">
+            <p>
+                Main Info
+            </p>
+        </div>
+        <div class="tab-pane fade" id="companies-panel">
+            <p>
+                Comapnies Info
+            </p>
+        </div>
+        <div class="tab-pane fade" id="preferences-panel">
+            <p>
+                Preferences Info
+            </p>
+        </div>
+        <div class="tab-pane fade" id="documents-panel">
+            <p>
+                Documents Info
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
