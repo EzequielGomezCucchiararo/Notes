@@ -322,4 +322,42 @@ fncioality in a component and extendes the other ones.
 We can see that the Observable service not only notifies the change, but also it is the "producer" of that change of data.
 ![](15.png)
 
- 
+### Unsubscribing from observables
+
+#### NgOnDestroy
+![](16.png)
+
+#### Auto unsubscribe decorator
+![](17.png)
+
+#### Using Subsink
+![](18.png)
+
+## Functions vs. pipes
+- Functions call made from a template are invoked every time a change occurs (no cachin).
+
+Example:
+```js
+{{ addTax(product.price) | currency }}
+```
+
+### Replacing functions with pipes
+- A pure pipe returns the same result given the same inputs
+- Only called when inputs to the pipe are changed
+
+Refactored example with a pipe
+```js
+{{ product.price | addTax | currency }}
+```
+
+### Using a memo decorator
+- `memo-decorator` is a package from NPM. Just install it and add the decorator `@memo` to a Pipe declaration. It will cache the inputs 
+  pass with the data returned to avoid to call the function body when it has already a value for the same inputs.
+
+## Security considerations
+![](20.png)
+![](21.png)
+![](22.png)
+![](23.png)
+![](24.png)
+![](25.png)
