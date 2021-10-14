@@ -361,3 +361,43 @@ Refactored example with a pipe
 ![](23.png)
 ![](24.png)
 ![](25.png)
+
+## Services
+Do limit logic in a component to only that requires for the view. All other logic should be delegated to services, since service must 
+have all the funcionality not related to the UI.
+
+### Usar provideIn
+Es mejor usar la configuración `provideIn` del decorator `@Injectable` ya que no solo nos ahorramos añadir el servicio al modulo en el 
+array de providers, sino que tambien, angular en tiempo de compilacion determinara si ese servicio es usado o no, y si no lo es, 
+directamente no lo meterá en el código final, teniendo asi un bundle size más pequeño.
+
+### Dependency Injection
+
+#### Providers
+A dependency provider configures an injector with a DI token, with that injector uses to provide the runtime version of a dependency value.
+
+![](32.png)
+
+A short syntax of the same (an the most used):
+
+![](31.png)
+
+#### Injectors
+
+![](33.png)
+
+If for any reason, a dependency that is provider in a root level, we want to have a different "instance" inside an specific component,
+then we can add this to de decorator class:
+
+![](34.png)
+![](35.png)
+
+#### Handling errors in async services with RxJs
+
+![](36.png)
+![](37.png)
+
+#### Built-in Angular services
+
+
+ 
