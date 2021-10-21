@@ -399,5 +399,45 @@ then we can add this to de decorator class:
 
 #### Built-in Angular services
 
+Title service: https://angular.io/api/platform-browser/Title
+Error handler: https://angular.io/api/core/ErrorHandler
 
- 
+## Observables
+
+### Why using async is better
+
+1. Angular subscribe for you
+2. Angular unsubscribe for you
+3. Improve performance
+
+![](41.png)
+
+## Combining actions streams with data streams pattern:
+![](42.png)
+![](45.png)
+
+## React to and "add" operation using scan pipe (pattern)
+![](43.png)
+![](44.png)
+
+## Reacting to a selection
+![](46.png)
+
+## Reacting to an error
+![](47.png)
+
+## Related data streams
+There are several ways to collect related data for our views.
+
+Let's see two of them: "get it all" and "just in time"
+
+### Get it all
+- Gets the data from the related dataset
+- Filters that dataset to find the related data
+
+![](48.png)
+
+### Just in time
+- Get just the related data items as needed
+
+![](49.png)
