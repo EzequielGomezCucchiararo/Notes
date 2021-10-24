@@ -204,7 +204,7 @@ So, before start a project:
 3. Minimum one module per feature 
 4. Avoid deeply nested folders: the below code don't follow the real app hierarchy but is far more easy to read: https://angular.io/guide/styleguide#flat
 
-![](img-01.png)
+![](img/img-01.png)
 
 ### Features modules
 1. Use two modules per feature: one for basic declarations and dependencies and other for routing
@@ -213,8 +213,8 @@ So, before start a project:
    static attribute like "components" to be an array of all this components; in that way, you dont need to add more imports to the main 
    feature module. Here an example:
 
-![](img-02.png)
-![](img-03.png)
+![](img/img-02.png)
+![](img/img-03.png)
 
 ### Core and shared modules
 
@@ -225,7 +225,7 @@ So, before start a project:
 
 Tool to prevent the core module to be re-imported:
 
-![](img-04.png)
+![](img/img-04.png)
 
 `@Optional` is a constructor parameter decorator that marks a dependency as optional.
 `@SkipSelf` is a constructor parameter decorator that tells the DI framework that dependency resolution should start from the parent 
@@ -233,8 +233,8 @@ injector
 
 Another "class based" solution for the same problem and a bit cleaner:
 
-![](img-05.png)
-![](img-06.png)
+![](img/img-05.png)
+![](img/img-06.png)
 
 #### Shared modules
 1. Reusable components, pipes, directives; all things that can be created more that once
@@ -306,32 +306,32 @@ You can use this pattern when you have components that uses the same kind of inp
 fncioality in a component and extendes the other ones.
 
 ## Components communication
-![](img-07.png)
+![](img/img-07.png)
 
 ### Event bus service
-![](08.png)
-![](09.png)
-![](10.png)
+![](img/08.png)
+![](img/09.png)
+![](img/10.png)
 
 ### Observable service
-![](11.png)
-![](12.png)
-![](13.png)
-![](14.png)
+![](img/11.png)
+![](img/12.png)
+![](img/13.png)
+![](img/14.png)
 
 We can see that the Observable service not only notifies the change, but also it is the "producer" of that change of data.
-![](15.png)
+![](img/15.png)
 
 ### Unsubscribing from observables
 
 #### NgOnDestroy
-![](16.png)
+![](img/16.png)
 
 #### Auto unsubscribe decorator
-![](17.png)
+![](img/17.png)
 
 #### Using Subsink
-![](18.png)
+![](img/18.png)
 
 ## Functions vs. pipes
 - Functions call made from a template are invoked every time a change occurs (no cachin).
@@ -355,12 +355,12 @@ Refactored example with a pipe
   pass with the data returned to avoid to call the function body when it has already a value for the same inputs.
 
 ## Security considerations
-![](20.png)
-![](21.png)
-![](22.png)
-![](23.png)
-![](24.png)
-![](25.png)
+![](img/20.png)
+![](img/21.png)
+![](img/22.png)
+![](img/23.png)
+![](img/24.png)
+![](img/25.png)
 
 ## Services
 Do limit logic in a component to only that requires for the view. All other logic should be delegated to services, since service must 
@@ -376,26 +376,26 @@ directamente no lo meterá en el código final, teniendo asi un bundle size más
 #### Providers
 A dependency provider configures an injector with a DI token, with that injector uses to provide the runtime version of a dependency value.
 
-![](32.png)
+![](img/32.png)
 
 A short syntax of the same (an the most used):
 
-![](31.png)
+![](img/31.png)
 
 #### Injectors
 
-![](33.png)
+![](img/33.png)
 
 If for any reason, a dependency that is provider in a root level, we want to have a different "instance" inside an specific component,
 then we can add this to de decorator class:
 
-![](34.png)
-![](35.png)
+![](img/34.png)
+![](img/35.png)
 
 #### Handling errors in async services with RxJs
 
-![](36.png)
-![](37.png)
+![](img/36.png)
+![](img/37.png)
 
 #### Built-in Angular services
 
@@ -410,21 +410,21 @@ Error handler: https://angular.io/api/core/ErrorHandler
 2. Angular unsubscribe for you
 3. Improve performance
 
-![](41.png)
+![](img/41.png)
 
 ## Combining actions streams with data streams pattern:
-![](42.png)
-![](45.png)
+![](img/42.png)
+![](img/45.png)
 
 ## React to and "add" operation using scan pipe (pattern)
-![](43.png)
-![](44.png)
+![](img/43.png)
+![](img/44.png)
 
 ## Reacting to a selection
-![](46.png)
+![](img/46.png)
 
 ## Reacting to an error
-![](47.png)
+![](img/47.png)
 
 ## Related data streams
 There are several ways to collect related data for our views.
@@ -435,9 +435,69 @@ Let's see two of them: "get it all" and "just in time"
 - Gets the data from the related dataset
 - Filters that dataset to find the related data
 
-![](48.png)
+![](img/48.png)
 
 ### Just in time
 - Get just the related data items as needed
 
-![](49.png)
+![](img/49.png)
+
+## Rx handle error pattern
+![](img/50.png)
+
+## Binding and structural directives
+![](img/51.png)
+
+## Types of component communication
+![](img/52.png)
+
+## ViewChild
+
+### Ways to select a child:
+![](img/53.png)
+
+Se podría utilizar, por ejemplo, si un componente es un formulario y queremos que cuando el usuario entre al form, automaticamente el 
+primer input del formulario se ponga en "focus":
+
+![](img/54.png)
+![](img/55.png)
+
+### Considerations using viewChild
+![](img/56.png)
+
+## ViewChildren
+As ViewChild but for multiple elements:
+![](img/57.png)
+![](img/58.png)
+
+### Guidelines for ViewChild
+![](img/59.png)
+![](img/60.png)
+![](img/61.png)
+
+## Communicating with child components
+![](img/62.png)
+![](img/64.png)
+ 
+### When to create child components
+![](img/63.png)
+
+## Communicating with a parent component
+![](img/65.png)
+![](img/66.png)
+
+## Communicating using the Router
+![](img/68.png)
+
+## Services
+![](img/67.png)
+
+## Angular forms
+![](img/70.png)
+
+
+
+
+
+
+
